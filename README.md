@@ -1,5 +1,17 @@
 # README
 
+Easily run a console with `./dev_console` and a server with `./dev_server`.
+This will ensure the correct ENV vars are set to be able to access the
+Contentful API.
+
+Run specs with `rspec spec`. This will however NOT run the tests which actually
+call to the Contentful API. To run those tests use `rspec spec --tag
+call-contentful-api`.
+This way normal test runs don't require a connection to the API, but tests that
+check the connection (and end-to-end tests) can be run when desired.
+
+
+
 Created the app with
 `rails new recipes --skip-turbolinks --skip-test --skip-javascript
 --skip-action-mailer --skip-action-mailbox --skip-action-storage
@@ -13,28 +25,3 @@ Notable skips are
 `--skip-javacript` and `--skip-webpack-install -> this is fine for the current
 very simple requirements, but is very likely to be added later
 `--skip-active-record` -> this is fine for the current very simple requirements,
-but is very likely to be added later
-
-<!--  -->
-<!-- This README would normally document whatever steps are necessary to get the -->
-<!-- application up and running. -->
-<!--  -->
-<!-- Things you may want to cover: -->
-<!--  -->
-<!-- * Ruby version -->
-<!--  -->
-<!-- * System dependencies -->
-<!--  -->
-<!-- * Configuration -->
-<!--  -->
-<!-- * Database creation -->
-<!--  -->
-<!-- * Database initialization -->
-<!--  -->
-<!-- * How to run the test suite -->
-<!--  -->
-<!-- * Services (job queues, cache servers, search engines, etc.) -->
-<!--  -->
-<!-- * Deployment instructions -->
-<!--  -->
-<!-- * ... -->
