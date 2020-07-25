@@ -1,0 +1,9 @@
+AllCops:
+  Exclude:
+    - Gemfile
+    - 'bin/**/*'
+    - 'config/**/*'
+    - config.ru
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+    - app/helpers/application_helper.rb
