@@ -1,0 +1,11 @@
+<h1><%= @recipe.title %></h1>
+
+<table>
+  <tbody>
+    <tr><td><%= image_tag @recipe.image_url, height: "50%" %></td></tr>
+    <tr><td><%= @recipe.tags %></td.</tr>
+    <tr><td><%= @recipe.description %></td></tr>
+    <tr><td><%= @recipe.chef %></td></tr>
+  </tbody>
+</table>
+<%= link_to 'Back', recipes_path %>

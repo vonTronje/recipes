@@ -1,0 +1,12 @@
+<h1>Recipes</h1>
+
+<table>
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <th scope="row"><%= link_to recipe.title, controller: 'recipes', action: 'show', id: recipe.id %></th>
+        <td><%= image_tag recipe.image_url, height: "30%" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
