@@ -1,11 +1,40 @@
-<h1><%= @recipe.title %></h1>
-
-<table>
-  <tbody>
-    <tr><td><%= image_tag @recipe.image_url, height: "50%" %></td></tr>
-    <tr><td><%= @recipe.tags %></td.</tr>
-    <tr><td><%= @recipe.description %></td></tr>
-    <tr><td><%= @recipe.chef %></td></tr>
-  </tbody>
-</table>
-<%= link_to 'Back', recipes_path %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+  <div class="container">
+    <%= link_to 'Recipe overview', recipes_path, class: 'navbar-brand mr-3' %>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="display-4">
+        <%= @recipe.title %>
+      </h1>
+    </div>
+  </div>
+  <%- unless @recipe.chef.empty? %>
+    <div class="row">
+      <div class="col-md-8">
+        <h1>
+          <small class="text-muted">
+            by <%= @recipe.chef %>
+          </small>
+        </h1>
+      </div>
+    </div>
+  <% end %>
+  <div class="row mb-2">
+    <div class="col-md-8 mb-2">
+      <%= image_tag @recipe.image_url, class: 'img-fluid' %>
+    </div>
+    <div class="col-md-4 text-info">
+      <%= @recipe.tags %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= @recipe.description %>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>
