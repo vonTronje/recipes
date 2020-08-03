@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'kramdown'
 
 class RecipePresenter
   def initialize(id:)
@@ -32,7 +33,7 @@ class RecipePresenter
   def description
     return '' if @recipe.description.nil?
 
-    @recipe.description
+    Kramdown::Document.new(@recipe.description).to_html.html_safe
   end
 
   def id
